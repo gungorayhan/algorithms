@@ -6,7 +6,8 @@
   "scripts": {
     "algoritma": "nodemon ./algoritma/index.js",
     "referans": "nodemon ./referans/index.js",
-    "degiskenler": "nodemon ./degiskenler/index.js"
+    "degiskenler": "nodemon ./degiskenler/index.js",
+    "class": "nodemon ./class/index.js"
   },
   "keywords": [],
   "author": "",
