@@ -14,3 +14,5 @@ console.log(JSON.parse(dataString)) //{ name: 'ayhan' }
 
 //localStorage da bilgileri string olarak tutarız
 // window.localStorage.setItem("myObject", JSON.stringify(myObject));
+// let newObject = window.localStorage.getItem("myObject");
+// console.log(JSON.parse(newObject));
