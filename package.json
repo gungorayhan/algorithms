@@ -8,7 +8,8 @@
     "referans": "nodemon ./referans/index.js",
     "soru-isareti": "nodemon ./soru-isareti/index.js",
     "class": "nodemon ./class/index.js",
-    "json.parse": "nodemon ./json.parse/index.js"
+    "json.parse": "nodemon ./json.parse/index.js",
+    "var-let-const": "nodemon ./var-let-const/index.js"
   },
   "keywords": [],
   "author": "",
