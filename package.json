@@ -9,7 +9,8 @@
     "soru-isareti": "nodemon ./soru-isareti/index.js",
     "class": "nodemon ./class/index.js",
     "json.parse": "nodemon ./json.parse/index.js",
-    "var-let-const": "nodemon ./var-let-const/index.js"
+    "var-let-const": "nodemon ./var-let-const/index.js",
+    "callback-promise-async": "nodemon ./callback-promise-async/index.js"
   },
   "keywords": [],
   "author": "",
