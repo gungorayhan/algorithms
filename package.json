@@ -12,7 +12,8 @@
     "var-let-const": "nodemon ./var-let-const/index.js",
     "callback-promise-async": "nodemon ./callback-promise-async/index.js",
     "fonksiyon": "nodemon ./fonksiyon/index.js",
-    "operator": "nodemon ./operator/index.js"
+    "operator": "nodemon ./operator/index.js",
+    "class-object": "nodemon ./class-object/index.js"
   },
   "keywords": [],
   "author": "",
