@@ -56,7 +56,7 @@ class Services {
         this.model=model
     }
 
-     create(name,email){
+     async create(name,email){
         return new Promise((resolve,reject)=>{
            setTimeout(()=>{
             let object = this.model.create(name,email);
@@ -99,7 +99,8 @@ async function personAsync(){
  console.log(data)
 }
 
-console.log(personThen())
-console.log(personAsync())
+personThen();
+personAsync();
+
 // Person { name: 'ayhan', email: 'ayhan@gmail.com' }
 // Person { name: 'ayhan', email: 'ayhan@gmail' }
