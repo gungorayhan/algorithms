@@ -2,7 +2,7 @@ Person = class {
     constructor(name, age) {
         this.name = name;
         this.age = age;
-        this.meetups=[];
+        this.meetups = [];
     }
 
     greet(person) {
@@ -30,10 +30,13 @@ Meetup = class {
         this.name = name
         this.attendees = []
     }
-    printAttendeeNames(){
-        this.attendees.forEach(element=>{
+    printAttendeeNames() {
+        this.attendees.forEach(element => {
             console.log(element)
         });
+    }
+    static create({ name, attendees }) {
+        return new Meetup(name, attendees)
     }
 }
 

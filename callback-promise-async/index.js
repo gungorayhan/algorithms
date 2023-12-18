@@ -199,7 +199,7 @@ async function AddAllAsync(){
 }
 
 
-AddAllAsync();//A Y H A N async/await
+AddAllAsync(); //A Y H A N async/await
 
 //Anlaşılması kolay derken neyden bahsettiğimi açıklayayım. 
 // Şöyle ki biz geliştiriciler olarak, çoğunlukla synchrounous 
