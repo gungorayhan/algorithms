@@ -47,3 +47,59 @@ console.log(nameObject.name)
 //   Yıldız
 
 })()
+
+
+//========================================== Model-Services =============================================================
+
+class Services {
+    constructor(model){
+        this.model=model
+    }
+
+     create(name,email){
+        return new Promise((resolve,reject)=>{
+           setTimeout(()=>{
+            let object = this.model.create(name,email);
+            resolve(object);
+           },3000)
+        }) 
+    }
+
+}
+
+
+
+class Person {
+    constructor(name,email){
+        this.name=name
+        this.email=email
+    }
+    static create(name,email){
+        return new Person(name,email);
+    }
+}
+
+class PersonServices extends Services{
+    constructor(){
+        super(Person)
+    }
+}
+
+const personSercices = new PersonServices()
+
+ function personThen (){
+    personSercices.create("ayhan","ayhan@gmail.com")
+    .then((result)=>{
+        console.log(result)
+    })
+}
+
+async function personAsync(){
+ let data = await personSercices.create("ayhan","ayhan@gmail");
+ console.log(data)
+}
+
+console.log(personThen())
+console.log(personAsync())
+// Person { name: 'ayhan', email: 'ayhan@gmail.com' }
+// Person { name: 'ayhan', email: 'ayhan@gmail' }
