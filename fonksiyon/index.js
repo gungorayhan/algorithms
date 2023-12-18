@@ -1,3 +1,4 @@
+
 //===========================1============================
 console.log("//===========================1============================")
 
@@ -69,8 +70,40 @@ return function(){counter+=1; return counter;}
 })();
 
 console.log(selfInvoking()); //1
+//===========================7============================
+console.log("//===========================7============================")
+
+const object2 ={
+    thisifadesi:"this ifadesine ulaşıldı",
+    fonk:function(){
+        return this.thisifadesi
+    }
+   
+}
+
+console.log(object2.fonk()) //this ifadesine ulaşıldı--> this=object2
 
 
+function thisFonk(){
+    let thisifadesi ="arrow fonksiyon"
+    function fonk(){
+        console.log(this.thisifadesi); 
+    }
+    fonk();
+}
+
+thisFonk() //undefined
+
+
+function arrowThis(){
+    var thisifadesi ="arrow fonksiyon";
+    ()=>{
+        this.thisifadesi;
+    }
+    
+}
+
+arrowThis();
 //=========================== ============================
 console.log("//=========================== ============================")
 //call()
@@ -149,4 +182,4 @@ const bind = {
   }
   
   let fullName = person.fullName.bind(member);
-  console.log(fullName())
+  console.log(fullName()) //Hege Nilsen
