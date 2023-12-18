@@ -11,7 +11,8 @@
     "json.parse": "nodemon ./json.parse/index.js",
     "var-let-const": "nodemon ./var-let-const/index.js",
     "callback-promise-async": "nodemon ./callback-promise-async/index.js",
-    "fonksiyon": "nodemon ./fonksiyon/index.js"
+    "fonksiyon": "nodemon ./fonksiyon/index.js",
+    "operator": "nodemon ./operator/index.js"
   },
   "keywords": [],
   "author": "",
