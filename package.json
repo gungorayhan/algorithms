@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "algoritma": "nodemon ./algoritma/index.js",
+    "algoritma2": "nodemon ./algoritma/index2.js",
     "referans": "nodemon ./referans/index.js",
     "soru-isareti": "nodemon ./soru-isareti/index.js",
     "class": "nodemon ./class/index.js",

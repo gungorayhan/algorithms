@@ -97,10 +97,17 @@ const personSercices = new PersonServices()
 async function personAsync(){
  let data = await personSercices.create("ayhan","ayhan@gmail");
  console.log(data)
+ return data;
 }
 
 personThen();
 personAsync();
 
+async function data(){
+    let data= await personAsync();
+    console.log(data.name +"  veri çekme işlemini başarıyla tamamladı");
+}
+
+data();
 // Person { name: 'ayhan', email: 'ayhan@gmail.com' }
 // Person { name: 'ayhan', email: 'ayhan@gmail' }
