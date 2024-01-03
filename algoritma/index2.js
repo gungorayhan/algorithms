@@ -146,3 +146,219 @@ console.log(`Linar Search: Index of ${targetElementLinear} is ${resultLinear}`);
 // 25
 // 12
 // Linar Search: Index of 12 is 2
+
+console.log("//===================== Veri Yapıları =====================")
+
+console.log("//=====Array(Dizi)")
+//Dizi, aynı türdeki verileri içeren bir veri yapısıdır
+
+let myArray =[1,2,3,4,5];
+
+//eleman ekleme
+myArray.push(6)
+
+//eleman erişimi
+console.log(myArray[2]); //3
+
+//Dizi uzunluğu
+
+console.log(myArray.length) //6
+
+console.log("//=====Nesne(Object)")
+//Nesne, anahtar-değer çiftleri içeren bir veri yapısıdır.
+
+let person ={
+    name:"John",
+    age:30,
+    city:"New York"
+}
+
+//veri okuma
+console.log(person.name); //John
+//yeni özellik ekleme
+person.job="Developer"
+//nesne içinde dolaşma
+for(let key in person){
+    console.log(`${key}: ${person[key]}`)
+}
+
+// name: John
+// age: 30
+// city: New York
+// job: Developer
+
+
+
+console.log("//=====Set")
+// Set, benzersiz değerleri içeren bir veri yapısıdır.
+
+// Set oluşturma
+let mySet = new Set([1, 2, 3, 4, 5, 5]);
+
+// Değer ekleme
+mySet.add(6);
+
+// değer kontrolü
+console.log(mySet.has(3)); // true
+
+// Set içinde dolaşma
+mySet.forEach(value => {
+  console.log(value);
+});
+
+// 1
+// 2
+// 3
+// 4
+// 5
+// 6
+
+
+console.log("//=====Harita (Map)")
+// Map, anahtar-değer çiftleri içeren bir veri yapısıdır. 
+// Nesnelere benzer, ancak anahtarlar string olmak zorunda değildir.
+
+let myMap = new Map();
+
+//değer ekleme
+myMap.set("name","Alice");
+myMap.set("age",25);
+myMap.set(15,25);
+
+//değer okuma
+console.log(myMap.get("name")); //Alice
+
+//map içinde dolaşma
+myMap.forEach((value,key)=>{
+    console.log(`${key}: ${value}`)
+})
+// name: Alice
+// age: 25
+// 15: 25
+
+console.log("//=====Bağlı Liste (Linked List)")
+// Bağlı liste, düğümlerden oluşan bir veri yapısıdır. 
+// Her düğüm, bir veri elemanını ve bir sonraki düğümü işaret eden bir referansı içerir.
+// dinamik boyutlara sahiptir ve elemanları birbirine bağlar
+
+class Node{
+    constructor(data){
+        this.data=data;
+        this.next=null;
+    }
+}
+
+class LinkedList{
+    constructor(){
+        this.head=null
+    }
+
+    append(data){
+        let newNode= new Node(data);
+        if(!this.head){
+            this.head=newNode;
+            return;
+        }
+        let current = this.head;
+        
+        while(current.next){ 
+            current = current.next
+        }
+        current.next=newNode;
+    }
+
+}
+
+let myList = new LinkedList()
+myList.append(1);
+myList.append(2);
+myList.append(3);
+
+console.log(myList.head)
+
+// Node {
+//     data: 1,
+//     next: Node { data: 2, next: Node { data: 3, next: null } }
+//   }
+
+
+
+function LinkedListWhile(data){
+    let current = data ;
+    while(current.next){
+        current=current.next;
+        console.log(` data: ${current.data} : ${current.next}`);
+    }
+}
+
+LinkedListWhile(myList.head);
+
+
+console.log("//=====Yığıt (Stack)")
+
+// Yığıt, son giren, ilk çıkan (LIFO - Last In, First Out) prensibiyle çalışan bir veri yapısıdır.
+
+let stack = [];
+
+// Eleman ekleme
+stack.push(1);
+stack.push(2);
+stack.push(3);
+
+// Eleman çıkarma
+let poppedElement = stack.pop();
+console.log(poppedElement); // 3
+
+console.log("//=====Kuyruk (Queue)")
+// Kuyruk, ilk giren, ilk çıkan (FIFO - First In, First Out) prensibiyle çalışan bir veri yapısıdır.
+let queue = [];
+
+// Eleman ekleme
+queue.push(1);
+queue.push(2);
+queue.push(3);
+
+// Eleman çıkarma
+let dequeuedElement = queue.shift();
+console.log(dequeuedElement); // 1
+
+
+
+console.log("//=====Hash Tablosu (Hash Table)")
+// Hash tablosu, anahtar-değer çiftlerini saklayan bir veri yapısıdır. 
+// Anahtarlar benzersiz bir şekilde hashlenir ve bu hash, değerleri 
+// tutmak için bir dizine indeks olarak kullanılır.
+
+class HashTable{
+    constructor(){
+        this.table={}
+    }
+
+    hash(key){
+        let hash=0;
+        for(let i = 0; i<key.length;i++){
+            hash+=key.charCodeAt(i);
+        }
+        return hash % 37; //Mod işlemi ile indeks hesaplama
+    }
+
+    set(key,value){
+        const index=this.hash(key);
+        this.table[index]=value;
+    }
+
+    get(key){
+        const index = this.hash(key);
+        return this.table[index];
+    }
+
+}
+
+let myHashTable=new HashTable()
+
+myHashTable.set("name","John");
+myHashTable.set("lastname","John");
+console.log(myHashTable.get("name")); //John
+console.log(myHashTable.table)
+// John
+// { '2': 'John', '10': 'John' }
