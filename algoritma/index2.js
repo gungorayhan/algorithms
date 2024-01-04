@@ -362,3 +362,58 @@ console.log(myHashTable.get("name")); //John
 console.log(myHashTable.table)
 // John
 // { '2': 'John', '10': 'John' }
+
+
+
+console.log("//===================== Yinelemeli (Recursive) Algoritmaları =====================")
+// Yinelemeli algoritmalar, problemi küçük parçalara bölerek çözme stratejisine dayanır. 
+// Ancak, yineleme derinleştikçe bellek kullanımı artabilir ve performans sorunları ortaya çıkabilir. 
+// Bu nedenle, bazı durumlarda yinelemeli yaklaşım yerine iteratif yaklaşımlar tercih edilebilir.
+console.log("//======= Faktöriyel Hesaplama")
+
+//Faktöriyel, bir sayının kendisi ile 1 arasındaki tüm sayıların çarpımıdır.
+
+function factorialRecursive(n){
+    console.log(n)
+    if(n===0 || n===1){
+        return 1;
+    }else{
+        return n*factorialRecursive(n-1)
+        // 5 * 4 * 3 * 2 * 1 -> 120
+    }
+}
+
+console.log(factorialRecursive(5)) //120
+
+console.log("//======= Fibonacci Dizisi")
+//Fibonacci dizisi, her sayının kendisinden önceki iki sayının toplamıyla elde edildiği bir dizidir.
+
+function fibonacciRecursive(d,n){
+    console.log(d, "-",n)
+    if(n<=1){
+        return n;
+    }
+    else{
+        console.log("------------------------")
+        return fibonacciRecursive("sol",n-1) + fibonacciRecursive("sağ",n-2)
+    }
+}
+
+console.log(fibonacciRecursive("default",10)) //5
+
+
+
+
+console.log("//=======Üs Alma (Exponentiation)")
+
+// Bir sayının üssünü hesaplamak için yinelemeli bir yaklaşım kullanabiliriz.
+
+function powerRecursive(base,exponent){
+    if(exponent ===0){
+        return 1;
+    }else{
+        return base * powerRecursive(base,exponent);
+    }
+}
+
+console.log(powerRecursive(2,3)) //8
